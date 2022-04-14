@@ -25,6 +25,8 @@
     [self initUI];
     
     [self addNotification];
+    
+
 }
 
 - (void)initUI {
@@ -46,7 +48,12 @@
     [playButton addTarget:self action:@selector(clickPlayButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playButton];
     
-    
+    UIButton *changeButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 100, 50)];
+    [changeButton setTitle:@"更换标题" forState:UIControlStateNormal];
+    changeButton.backgroundColor = [UIColor grayColor];
+    [changeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [changeButton addTarget:self action:@selector(changeButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:changeButton];
 }
 
 #pragma mark - Control
@@ -81,26 +88,48 @@
     else {
         [self pause];
     }
+
+}
+
+- (void)changeButton {
+    [self updateCenterInfo];
 }
 
 - (void)play {
     [self.player play];
+    
+    [MPNowPlayingInfoCenter defaultCenter].playbackState = MPNowPlayingPlaybackStatePlaying;
 }
 
 - (void)pause {
     [self.player pause];
+    [MPNowPlayingInfoCenter defaultCenter].playbackState = MPNowPlayingPlaybackStatePaused;
+}
+
+- (void)updateCenterInfo {
+    NSMutableDictionary *nowPlayingInfo = [[MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo mutableCopy];
+    
+    [nowPlayingInfo setValue:@"换一个标题" forKey:MPMediaItemPropertyTitle];
+    
+    UIImage *image = [UIImage imageNamed:@"fantastic"];
+    MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(200, 200) requestHandler:^UIImage * _Nonnull(CGSize size) {
+        return image;
+    }];
+    [nowPlayingInfo setObject:artwork forKey:MPMediaItemPropertyArtwork];
+    
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
 }
 
 //通过MPNowPlayingInfoCenter与carplay交互音频播放
 - (void)prepareMPNowPlayingInfoCenter {
-    MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
     
-    NSMutableDictionary *info = [NSMutableDictionary new];
-    [info setObject:@"爱在西元前" forKey:MPMediaItemPropertyTitle];
-    [info setObject:@"JAY" forKey:MPMediaItemPropertyArtist];
-    [info setObject:@(300) forKey:MPMediaItemPropertyPlaybackDuration];
-    
-    center.nowPlayingInfo = info;
+    NSMutableDictionary *nowPlayingInfo = [NSMutableDictionary new];
+    [nowPlayingInfo setObject:@"爱在西元前" forKey:MPMediaItemPropertyTitle];
+    [nowPlayingInfo setObject:@"JAY" forKey:MPMediaItemPropertyArtist];
+    [nowPlayingInfo setObject:@(300) forKey:MPMediaItemPropertyPlaybackDuration];
+        
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
+
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 }
@@ -109,8 +138,8 @@
 - (AVPlayer *)player {
     if (!_player) {
         _player = [AVPlayer playerWithURL:[NSURL URLWithString:@"https://ipa.cm.jstv.com/azxyq.mp3"]];
-        
         [self prepareMPNowPlayingInfoCenter];
+
     }
     return _player;
 }
