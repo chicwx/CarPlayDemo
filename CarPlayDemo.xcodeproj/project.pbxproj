@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		307FBF612807AB0F00A2D55C /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307FBF602807AB0F00A2D55C /* IndexViewController.m */; };
 		30C0D6A42806D0D200829745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6A32806D0D200829745 /* AppDelegate.m */; };
 		30C0D6A72806D0D200829745 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6A62806D0D200829745 /* SceneDelegate.m */; };
 		30C0D6AA2806D0D200829745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6A92806D0D200829745 /* ViewController.m */; };
@@ -14,9 +15,14 @@
 		30C0D6AF2806D0DC00829745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C0D6AE2806D0DC00829745 /* Assets.xcassets */; };
 		30C0D6B22806D0DC00829745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C0D6B02806D0DC00829745 /* LaunchScreen.storyboard */; };
 		30C0D6B52806D0DC00829745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6B42806D0DC00829745 /* main.m */; };
+		30C0D6BD2806D13000829745 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30C0D6BC2806D13000829745 /* Entitlements.plist */; };
+		30C0D6C22806D41800829745 /* CarPlaySceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6C12806D41800829745 /* CarPlaySceneDelegate.m */; };
+		30C0D6CE28079B6F00829745 /* CarPlayTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6CD28079B6F00829745 /* CarPlayTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		307FBF5F2807AB0F00A2D55C /* IndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		307FBF602807AB0F00A2D55C /* IndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		30C0D69F2806D0D200829745 /* CarPlayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPlayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C0D6A22806D0D200829745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30C0D6A32806D0D200829745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +35,11 @@
 		30C0D6B12806D0DC00829745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30C0D6B32806D0DC00829745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30C0D6B42806D0DC00829745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		30C0D6BC2806D13000829745 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		30C0D6C02806D41800829745 /* CarPlaySceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarPlaySceneDelegate.h; sourceTree = "<group>"; };
+		30C0D6C12806D41800829745 /* CarPlaySceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarPlaySceneDelegate.m; sourceTree = "<group>"; };
+		30C0D6CC28079B6F00829745 /* CarPlayTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarPlayTabViewController.h; sourceTree = "<group>"; };
+		30C0D6CD28079B6F00829745 /* CarPlayTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarPlayTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +78,18 @@
 				30C0D6A62806D0D200829745 /* SceneDelegate.m */,
 				30C0D6A82806D0D200829745 /* ViewController.h */,
 				30C0D6A92806D0D200829745 /* ViewController.m */,
+				307FBF5F2807AB0F00A2D55C /* IndexViewController.h */,
+				307FBF602807AB0F00A2D55C /* IndexViewController.m */,
+				30C0D6C02806D41800829745 /* CarPlaySceneDelegate.h */,
+				30C0D6C12806D41800829745 /* CarPlaySceneDelegate.m */,
+				30C0D6CC28079B6F00829745 /* CarPlayTabViewController.h */,
+				30C0D6CD28079B6F00829745 /* CarPlayTabViewController.m */,
 				30C0D6AB2806D0D200829745 /* Main.storyboard */,
 				30C0D6AE2806D0DC00829745 /* Assets.xcassets */,
 				30C0D6B02806D0DC00829745 /* LaunchScreen.storyboard */,
 				30C0D6B32806D0DC00829745 /* Info.plist */,
 				30C0D6B42806D0DC00829745 /* main.m */,
+				30C0D6BC2806D13000829745 /* Entitlements.plist */,
 			);
 			path = CarPlayDemo;
 			sourceTree = "<group>";
@@ -132,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C0D6BD2806D13000829745 /* Entitlements.plist in Resources */,
 				30C0D6B22806D0DC00829745 /* LaunchScreen.storyboard in Resources */,
 				30C0D6AF2806D0DC00829745 /* Assets.xcassets in Resources */,
 				30C0D6AD2806D0D200829745 /* Main.storyboard in Resources */,
@@ -146,7 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C0D6AA2806D0D200829745 /* ViewController.m in Sources */,
+				307FBF612807AB0F00A2D55C /* IndexViewController.m in Sources */,
+				30C0D6CE28079B6F00829745 /* CarPlayTabViewController.m in Sources */,
 				30C0D6A42806D0D200829745 /* AppDelegate.m in Sources */,
+				30C0D6C22806D41800829745 /* CarPlaySceneDelegate.m in Sources */,
 				30C0D6B52806D0DC00829745 /* main.m in Sources */,
 				30C0D6A72806D0D200829745 /* SceneDelegate.m in Sources */,
 			);
@@ -291,14 +313,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
+				CODE_SIGN_ENTITLEMENTS = /Users/wangxiao/Desktop/CarPlayDemo/CarPlayDemo/Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = CLPLV533P8;
 				INFOPLIST_FILE = CarPlayDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cc.CarPlayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AD;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -308,14 +336,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
+				CODE_SIGN_ENTITLEMENTS = /Users/wangxiao/Desktop/CarPlayDemo/CarPlayDemo/Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = CLPLV533P8;
 				INFOPLIST_FILE = CarPlayDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cc.CarPlayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AD;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
