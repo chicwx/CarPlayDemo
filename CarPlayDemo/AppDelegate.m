@@ -40,7 +40,7 @@
     if (event.type == UIEventTypeRemoteControl) {
         
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"remoteControlReceivedWithEvent" object:@(event.type) userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"remoteControlReceivedWithEvent" object:@(event.subtype) userInfo:nil];
 }
 
 @end

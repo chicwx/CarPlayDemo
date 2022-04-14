@@ -53,8 +53,9 @@
 
 - (void)handleRemoteControl:(NSNotification *)notification {
     NSLog(@"notification");
-    
-    UIEventType type = (UIEventType)notification.object;
+        
+    UIEventType type = [(NSNumber *)notification.object integerValue];
+
     switch (type) {
         case UIEventSubtypeRemoteControlPlay:
             [self play];
