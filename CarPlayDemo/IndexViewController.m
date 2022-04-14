@@ -33,6 +33,7 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 300, 100)];
     label.text = @"这是测试标题";
+    label.textColor = [UIColor blackColor];
     [self.view addSubview:label];
     
     
@@ -44,6 +45,8 @@
     [playButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
     [playButton addTarget:self action:@selector(clickPlayButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playButton];
+    
+    
 }
 
 #pragma mark - Control
