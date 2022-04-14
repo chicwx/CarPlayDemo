@@ -42,17 +42,19 @@
         
         NSMutableArray *list = [NSMutableArray new];
         
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 20; j++) {
             NSString *title = [NSString stringWithFormat:@"%@页-第%@个",@(i),@(j)];
             NSString *subTitle = [NSString stringWithFormat:@"%@页-第%@个 副标题",@(i),@(j)];
 
             CPListItem *listItem = [[CPListItem alloc] initWithText:title detailText:subTitle];
+            listItem.image = [UIImage imageNamed:@"fantastic"];
             
             [list addObject:listItem];
             
-            listItem.handler = ^(CPListItem *item,id obj) {
+            listItem.handler = ^(CPListItem *item,dispatch_block_t block) {
 //                NSLog(@"click item %@",item);
                 [self clickItem:item];
+                block();
             };
         }
         
@@ -72,7 +74,6 @@
 - (void)clickItem:(CPListItem *)item {
     CPNowPlayingTemplate *nowTemplate = [CPNowPlayingTemplate sharedTemplate];
     [self.interfaceController pushTemplate:nowTemplate animated:YES completion:^(BOOL success, NSError * _Nullable error) {
-        NSLog(@"pushTemplate %@",error.localizedFailureReason);
     }];
 }
 

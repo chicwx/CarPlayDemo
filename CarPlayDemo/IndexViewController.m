@@ -9,6 +9,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
+#import <CarPlay/CarPlay.h>
 
 @interface IndexViewController ()
 
@@ -98,12 +99,12 @@
 - (void)play {
     [self.player play];
     
-    [MPNowPlayingInfoCenter defaultCenter].playbackState = MPNowPlayingPlaybackStatePlaying;
+//    [MPNowPlayingInfoCenter defaultCenter].playbackState = MPNowPlayingPlaybackStatePlaying;
 }
 
 - (void)pause {
     [self.player pause];
-    [MPNowPlayingInfoCenter defaultCenter].playbackState = MPNowPlayingPlaybackStatePaused;
+//    [MPNowPlayingInfoCenter defaultCenter].playbackState = MPNowPlayingPlaybackStatePaused;
 }
 
 - (void)updateCenterInfo {
@@ -112,12 +113,25 @@
     [nowPlayingInfo setValue:@"换一个标题" forKey:MPMediaItemPropertyTitle];
     
     UIImage *image = [UIImage imageNamed:@"fantastic"];
-    MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(200, 200) requestHandler:^UIImage * _Nonnull(CGSize size) {
+    
+    MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithBoundsSize:image.size requestHandler:^UIImage * _Nonnull(CGSize size) {
         return image;
     }];
+    
     [nowPlayingInfo setObject:artwork forKey:MPMediaItemPropertyArtwork];
     
+
+    
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
+    
+    CPNowPlayingImageButton *imageButton = [[CPNowPlayingImageButton alloc] initWithImage:image handler:^(__kindof CPNowPlayingButton * _Nonnull button) {
+        NSLog(@"click CPNowPlayingImageButton");
+    }];
+    
+    
+    CPNowPlayingTemplate *nowTemplate = [CPNowPlayingTemplate sharedTemplate];
+    [nowTemplate updateNowPlayingButtons:@[imageButton]];
+    
 }
 
 //通过MPNowPlayingInfoCenter与carplay交互音频播放
@@ -131,13 +145,16 @@
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
 
     
+
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 }
 
 #pragma mark - Lazy
 - (AVPlayer *)player {
     if (!_player) {
-        _player = [AVPlayer playerWithURL:[NSURL URLWithString:@"https://ipa.cm.jstv.com/azxyq.mp3"]];
+        //[NSURL URLWithString:@"https://ipa.cm.jstv.com/azxyq.mp3"]
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"azxyq" ofType:@"mp3"];
+        _player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:path]];
         [self prepareMPNowPlayingInfoCenter];
 
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		307FBF612807AB0F00A2D55C /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307FBF602807AB0F00A2D55C /* IndexViewController.m */; };
+		307FBF9E2808284700A2D55C /* azxyq.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 307FBF9D2808284700A2D55C /* azxyq.mp3 */; };
 		30C0D6A42806D0D200829745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6A32806D0D200829745 /* AppDelegate.m */; };
 		30C0D6A72806D0D200829745 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6A62806D0D200829745 /* SceneDelegate.m */; };
 		30C0D6AA2806D0D200829745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0D6A92806D0D200829745 /* ViewController.m */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		307FBF5F2807AB0F00A2D55C /* IndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		307FBF602807AB0F00A2D55C /* IndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		307FBF9D2808284700A2D55C /* azxyq.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = azxyq.mp3; sourceTree = "<group>"; };
 		30C0D69F2806D0D200829745 /* CarPlayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPlayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C0D6A22806D0D200829745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30C0D6A32806D0D200829745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				30C0D6B02806D0DC00829745 /* LaunchScreen.storyboard */,
 				30C0D6B32806D0DC00829745 /* Info.plist */,
 				30C0D6B42806D0DC00829745 /* main.m */,
+				307FBF9D2808284700A2D55C /* azxyq.mp3 */,
 				30C0D6BC2806D13000829745 /* Entitlements.plist */,
 			);
 			path = CarPlayDemo;
@@ -150,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307FBF9E2808284700A2D55C /* azxyq.mp3 in Resources */,
 				30C0D6BD2806D13000829745 /* Entitlements.plist in Resources */,
 				30C0D6B22806D0DC00829745 /* LaunchScreen.storyboard in Resources */,
 				30C0D6AF2806D0DC00829745 /* Assets.xcassets in Resources */,
@@ -324,9 +328,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cc.CarPlayDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jsbc.weiboo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = AD;
+				PROVISIONING_PROFILE_SPECIFIER = LanJingDEV;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

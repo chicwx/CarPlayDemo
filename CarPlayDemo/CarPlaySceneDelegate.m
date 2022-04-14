@@ -36,17 +36,17 @@
     tabBoard.interfaceController = interfaceController;
     
     //设置正在播放页面模板
-    CPNowPlayingTemplate *nowTemplate = [CPNowPlayingTemplate sharedTemplate];
-    
-    CPNowPlayingPlaybackRateButton *playButton = [[CPNowPlayingPlaybackRateButton alloc] initWithHandler:^(__kindof CPNowPlayingButton * _Nonnull button) {
-        NSLog(@"playButton");
-    }];
-    
-    CPNowPlayingRepeatButton *repeatButton = [[CPNowPlayingRepeatButton alloc] initWithHandler:^(__kindof CPNowPlayingButton * _Nonnull button) {
-        NSLog(@"repeatButton");
-    }];
-    
-    [nowTemplate updateNowPlayingButtons:@[playButton,repeatButton]];
+//    CPNowPlayingTemplate *nowTemplate = [CPNowPlayingTemplate sharedTemplate];
+//
+//    CPNowPlayingPlaybackRateButton *playButton = [[CPNowPlayingPlaybackRateButton alloc] initWithHandler:^(__kindof CPNowPlayingButton * _Nonnull button) {
+//        NSLog(@"playButton");
+//    }];
+//
+//    CPNowPlayingRepeatButton *repeatButton = [[CPNowPlayingRepeatButton alloc] initWithHandler:^(__kindof CPNowPlayingButton * _Nonnull button) {
+//        NSLog(@"repeatButton");
+//    }];
+//
+//    [nowTemplate updateNowPlayingButtons:@[playButton,repeatButton]];
 }
 
 // CarPlay connected
